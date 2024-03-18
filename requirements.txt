@@ -1,0 +1,11 @@
+opencv-python
+diffusers[torch]
+transformers
+xformers
+accelerate
+safetensors
+timm
+scikit-image
+git+https://github.com/Pranjalya/BasicSR.git
+realesrgan
+scipy
