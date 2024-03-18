@@ -33,7 +33,7 @@ class Pipeline:
 
         self.pipe.enable_model_cpu_offload()
         # speed up diffusion process with faster scheduler and memory optimization
-        self.pipe.scheduler = UniPCMultistepScheduler.from_config(pipe.scheduler.config)
+        self.pipe.scheduler = UniPCMultistepScheduler.from_config(self.pipe.scheduler.config)
         # remove following line if xformers is not installed
         self.pipe.enable_xformers_memory_efficient_attention()
 
