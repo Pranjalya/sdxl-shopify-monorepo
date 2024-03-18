@@ -114,8 +114,8 @@ class Segmenter:
         print("Initializing segmenter...")
 
         if not os.path.exists(save_path):
-            os.mkdir(save_path, exist_ok=True)
-            os.mkdir(os.path.join(save_path, "git"), exist_ok=True)
+            os.makedirs(save_path, exist_ok=True)
+            os.makedirs(os.path.join(save_path, "git"), exist_ok=True)
             os.system(f"git clone https://github.com/xuebinqin/DIS {os.path.join(save_path, 'git')}/xuebinqin/DIS")
             hf_hub_download(repo_id="NimaBoscarino/IS-Net_DIS-general-use",
                             filename="isnet-general-use.pth", local_dir="saved_models")
