@@ -56,9 +56,9 @@ class Segmenter:
 
         net.to(self.device)
 
-        if (hypar["restore_model"] != ""):
+        if (self.hypar["restore_model"] != ""):
             net.load_state_dict(torch.load(
-                os.path.join(hypar["model_path"], hypar["restore_model"]), map_location=self.device))
+                os.path.join(self.hypar["model_path"], self.hypar["restore_model"]), map_location=self.device))
             net.to(self.device)
         net.eval()
         return net
