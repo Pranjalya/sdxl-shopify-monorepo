@@ -90,5 +90,5 @@ class Upsampler:
         print("Not downscaling")
         return original
 
-    def ensure_resolution(original, megapixels=1.0):
+    def ensure_resolution(self, original, megapixels=1.0):
         return self.maybe_downscale(self.maybe_upscale(original, megapixels), megapixels)
