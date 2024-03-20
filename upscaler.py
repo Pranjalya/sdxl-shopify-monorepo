@@ -56,7 +56,7 @@ class Upsampler:
             target_width = original_width * scale_by
             target_height = original_height * scale_by
 
-            if (target_width - original_width >= 1 or target_height - original_height >= UPSCALE_PIXEL_THRESHOLD):
+            if (target_width - original_width >= 1 or target_height - original_height >= self.UPSCALE_PIXEL_THRESHOLD):
                 print("Upscaling...")
                 upscaled = self.upscale(original)
                 print("Upscaled size:", upscaled.size)
@@ -76,7 +76,7 @@ class Upsampler:
             target_width = original_width * scale_by
             target_height = original_height * scale_by
 
-            if (original_width - target_width >= 1 or original_height - target_height >= DOWNSCALE_PIXEL_THRESHOLD):
+            if (original_width - target_width >= 1 or original_height - target_height >= self.DOWNSCALE_PIXEL_THRESHOLD):
                 print("Downscaling...")
                 target_width = round(target_width)
                 target_height = round(target_height)
@@ -91,4 +91,4 @@ class Upsampler:
         return original
 
     def ensure_resolution(original, megapixels=1.0):
-        return maybe_downscale(maybe_upscale(original, megapixels), megapixels)
+        return self.maybe_downscale(self.maybe_upscale(original, megapixels), megapixels)
