@@ -52,8 +52,8 @@ class BackgroundReplacer:
 
         torch.cuda.empty_cache()
 
-        print(f"Ensuring resolution ({MEGAPIXELS}MP)...")
-        resized = self.upscaler.ensure_resolution(original, megapixels=MEGAPIXELS)
+        print(f"Ensuring resolution ({self.MEGAPIXELS}MP)...")
+        resized = self.upscaler.ensure_resolution(original, megapixels=self.MEGAPIXELS)
         pbar.update(1)
 
         print("Resized size:", resized.size)
